@@ -177,6 +177,18 @@ class WalletController extends Controller
                 ip: $request->ip()
             );
 
+            // Notify Retailer of manual adjustment
+            Notification::create([
+                'id' => 'NTF_ADJ_' . ($res['transaction']->id ?? Str::random(8)),
+                'audience' => $validated['retailer_id'],
+                'title' => $validated['type'] === 'credit' ? 'Wallet balance credited' : 'Wallet balance debited',
+                'text' => "₹" . number_format($validated['amount']) . " was " . ($validated['type'] === 'credit' ? 'credited to' : 'debited from') . " your wallet by Super Admin (" . $note . ").",
+                'type' => $validated['type'] === 'credit' ? 'success' : 'info',
+                'link' => '/retailer/overview',
+                'read' => false,
+                'created_at' => Carbon::now(),
+            ]);
+
             return $this->successResponse([
                 'wallet' => [
                     'retailer_id' => $res['wallet']->retailer_id,
@@ -269,6 +281,18 @@ class WalletController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
+        // Create Retailer Notification confirming submission
+        Notification::create([
+            'id' => 'NTF_FRQ_SUB_' . $id,
+            'audience' => $retailer->id,
+            'title' => 'Top-up request submitted',
+            'text' => "Your top-up request #{$id} for ₹" . number_format($validated['amount']) . " via {$validated['mode']} is under review.",
+            'type' => 'info',
+            'link' => '/retailer/overview',
+            'read' => false,
+            'created_at' => Carbon::now(),
+        ]);
+
         // Record Audit Log
         AuditLog::record(
             actor: $retailer->shop . ' (' . $retailer->id . ')',
@@ -311,6 +335,20 @@ class WalletController extends Controller
         $fundRequest->status = 'approved';
         $fundRequest->save();
 
+        // Notify retailer of approval
+        Notification::updateOrCreate(
+            ['id' => 'NTF_FRQ_APP_' . $fundRequest->id],
+            [
+                'audience' => $fundRequest->retailer_id,
+                'title' => 'Top-up request approved',
+                'text' => "Your top-up of ₹" . number_format($fundRequest->amount) . " via {$fundRequest->mode} was approved and credited to your wallet.",
+                'type' => 'success',
+                'link' => '/retailer/overview',
+                'read' => false,
+                'created_at' => Carbon::now(),
+            ]
+        );
+
         AuditLog::record(
             actor: 'Super Admin',
             action: 'Approved Fund Request',
@@ -334,6 +372,20 @@ class WalletController extends Controller
 
         $fundRequest->status = 'rejected';
         $fundRequest->save();
+
+        // Notify retailer of rejection
+        Notification::updateOrCreate(
+            ['id' => 'NTF_FRQ_REJ_' . $fundRequest->id],
+            [
+                'audience' => $fundRequest->retailer_id,
+                'title' => 'Top-up request rejected',
+                'text' => "Your top-up request #{$fundRequest->id} for ₹" . number_format($fundRequest->amount) . " was rejected by Super Admin.",
+                'type' => 'warning',
+                'link' => '/retailer/overview',
+                'read' => false,
+                'created_at' => Carbon::now(),
+            ]
+        );
 
         AuditLog::record(
             actor: 'Super Admin',

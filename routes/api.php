@@ -86,12 +86,10 @@ Route::prefix('retailer')->group(function () {
     Route::get('/history', [VerificationController::class, 'records']);
 });
 
-// 4. Authenticated Notifications
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/notifications', [NotificationController::class, 'index']);
-    Route::put('/notifications/{id}/read', [NotificationController::class, 'markAsRead']);
-    Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead']);
-});
+// 4. Notifications Endpoints (Admin & Retailer Scoped)
+Route::get('/notifications', [NotificationController::class, 'index']);
+Route::put('/notifications/{id}/read', [NotificationController::class, 'markAsRead']);
+Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead']);
 
 // 4. Shared Catalog & Services
 Route::get('/services', [KycServiceController::class, 'index']);

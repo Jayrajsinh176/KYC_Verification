@@ -15,22 +15,73 @@
 
 ---
 
-## Table of Contents
-1. [Authentication & Session APIs](#1-authentication--session-apis)
-2. [KYC Verification Services (Core Engine)](#2-kyc-verification-services-core-engine)
-3. [Retailer Portal & Dashboard APIs](#3-retailer-portal--dashboard-apis)
-4. [Wallet & Fund Request APIs](#4-wallet--fund-request-apis)
-5. [Super Admin Management APIs](#5-super-admin-management-apis)
-6. [Notifications & Platform Settings APIs](#6-notifications--platform-settings-apis)
+## Complete API Route Index (54 Registered Endpoints)
+
+| # | Group | Method | Endpoint Route | Used in Frontend Screen | Description |
+|:---:|:---|:---:|:---|:---|:---|
+| **1** | Auth | `POST` | `/api/auth/admin/login` | Admin Login Screen | Super Admin authentication |
+| **2** | Auth | `POST` | `/api/auth/retailer/login` | Retailer Login Screen | Retailer login via Mobile/Email |
+| **3** | Auth | `GET` | `/api/auth/me` | App Bootstrap / Header | Retrieve active session & live balance |
+| **4** | Auth | `POST` | `/api/auth/logout` | Header / User Menu | Revoke current session token |
+| **5** | KYC Engine | `POST` | `/api/verifications/verify` | Verification Modals | Run PAN / Aadhaar / Bank / e-Sign KYC |
+| **6** | KYC Engine | `GET` | `/api/verifications/records` | Audit Trail / History | Search & filter verification logs |
+| **7** | Retailer | `GET` | `/api/retailer/overview` | Retailer Dashboard | KPIs, balance float & recent transactions |
+| **8** | Retailer | `GET` | `/api/retailer/profile` | Retailer Settings | View profile details |
+| **9** | Retailer | `PUT` | `/api/retailer/profile` | Retailer Settings | Update profile details |
+| **10** | Retailer | `PUT` | `/api/retailer/password` | Retailer Settings | Change retailer account password |
+| **11** | Retailer | `POST` | `/api/retailer/logout-all` | Retailer Security | Revoke all active session tokens |
+| **12** | Retailer | `POST` | `/api/retailer/fund-requests` | Retailer Wallet | Submit top-up request with UTR |
+| **13** | Retailer | `GET` | `/api/retailer/records` | Retailer Verifications | Paginated verification history |
+| **14** | Retailer | `GET` | `/api/retailer/verifications` | Retailer Verifications | Alias to verification records |
+| **15** | Retailer | `GET` | `/api/retailer/history` | Retailer History | Alias to verification records |
+| **16** | Wallet | `GET` | `/api/wallet/transactions` | Wallet Passbook | Paginated ledger credits & debits |
+| **17** | Wallet | `GET` | `/api/wallet/fund-requests` | Wallet Top-Ups | List submitted fund requests |
+| **18** | Wallet | `POST` | `/api/wallet/fund-requests` | Wallet Top-Ups | Submit new wallet top-up request |
+| **19** | Wallet | `POST` | `/api/wallet/adjust` | Admin Wallet Panel | Manual credit / debit adjustment |
+| **20** | Wallet | `PUT` | `/api/wallet/fund-requests/{id}/approve` | Admin Wallet | Approve fund request & credit float |
+| **21** | Wallet | `PUT` | `/api/wallet/fund-requests/{id}/reject` | Admin Wallet | Reject fund request with reason |
+| **22** | Admin | `GET` | `/api/admin/overview` | Admin Dashboard | Platform KPIs, success rates & charts |
+| **23** | Admin | `GET` | `/api/admin/retailers` | Retailer Directory | List merchants with balance & usage |
+| **24** | Admin | `POST` | `/api/admin/retailers` | Onboard Retailer Modal | Register new retailer account |
+| **25** | Admin | `PUT` | `/api/admin/retailers/{id}` | Edit Retailer Modal | Update merchant profile & address |
+| **26** | Admin | `PUT` | `/api/admin/retailers/{id}/status` | Retailer Row Actions | Toggle active / inactive status |
+| **27** | Admin | `GET` | `/api/admin/services` | Service Switchboard | List KYC services, costs & status |
+| **28** | Admin | `PUT` | `/api/admin/services/{id}` | Edit Service Modal | Update base price, cost, or pause |
+| **29** | Admin | `GET` | `/api/admin/pricing` | Pricing Matrix | Rate cards, margins & overrides |
+| **30** | Admin | `POST` | `/api/admin/pricing/defaults` | Pricing Settings | Save platform default rate card |
+| **31** | Admin | `POST` | `/api/admin/pricing/override` | Rate Card Editor | Assign custom pricing to retailer |
+| **32** | Admin | `DELETE` | `/api/admin/pricing/override/{id}` | Rate Card Editor | Reset retailer to platform default |
+| **33** | Admin | `GET` | `/api/admin/wallet/overview` | Admin Wallet Overview | Total float, monthly volume & requests |
+| **34** | Admin | `GET` | `/api/admin/wallet/transactions` | Admin Ledger View | Platform-wide financial ledger |
+| **35** | Admin | `GET` | `/api/admin/wallet/fund-requests` | Admin Approvals | List pending merchant top-up proofs |
+| **36** | Admin | `PUT` | `/api/admin/wallet/fund-requests/{id}/approve` | Admin Approvals | Approve fund request & credit float |
+| **37** | Admin | `PUT` | `/api/admin/wallet/fund-requests/{id}/reject` | Admin Approvals | Reject invalid UTR submission |
+| **38** | Admin | `POST` | `/api/admin/wallet/adjust` | Manual Adjustment Drawer | Direct balance credit / debit |
+| **39** | Admin | `GET` | `/api/admin/records` | Admin Audit Trail | Platform-wide verification history |
+| **40** | Admin | `GET` | `/api/admin/reports` | Analytics & Reports | Verification trends, margin & metrics |
+| **41** | Admin | `GET` | `/api/admin/settings` | Platform Settings | Company info, system thresholds, ESPs |
+| **42** | Admin | `PUT` | `/api/admin/settings/{section}` | Platform Settings | Update company, notification, or ESP |
+| **43** | Admin | `PUT` | `/api/admin/profile` | Admin Profile | Update admin name, designation & phone |
+| **44** | Admin | `PUT` | `/api/admin/password` | Admin Security | Change administrator password |
+| **45** | Admin | `GET` | `/api/admin/audit-logs` | Security Logs | System audit log of admin actions |
+| **46** | Admin | `POST` | `/api/admin/demo-data/reset` | Demo Reset Bar | Re-seed database to default state |
+| **47** | Notifications | `GET` | `/api/notifications` | Top Navbar Bell | Unread notifications stream |
+| **48** | Notifications | `PUT` | `/api/notifications/{id}/read` | Notification Dropdown | Mark individual alert as read |
+| **49** | Notifications | `POST` | `/api/notifications/mark-all-read` | Notification Dropdown | Mark all alerts as read |
+| **50** | Shared | `GET` | `/api/services` | Service Catalog | Public/shared list of active services |
+| **51** | Shared | `GET` | `/api/pricing` | Shared Pricing | Public/shared pricing matrix |
+| **52** | Shared | `GET` | `/api/retailers` | Merchant Fallback | Shared retailer directory |
+| **53** | Shared | `POST` | `/api/retailers` | Merchant Fallback | Direct retailer registration |
+| **54** | Shared | `PUT` | `/api/retailers/{id}/status` | Merchant Fallback | Direct status toggle |
 
 ---
 
 ## 1. Authentication & Session APIs
 
 ### 1. Super Admin Login
-* **Where Used in Frontend:** Admin Login Screen (`/login/admin` or Admin Login Tab)
+* **Where Used in Frontend:** Admin Login Screen (`/admin/login`)
 * **Endpoint:** `POST /api/auth/admin/login`
-* **Why used:** Authenticates platform administrators, verifies admin role privileges, and issues a Sanctum Bearer token.
+* **Why used:** Authenticates administrator, checks admin role capabilities, records security audit trail, and returns Sanctum Bearer token.
 * **Request format:**
 ```json
 {
@@ -61,17 +112,16 @@
 ---
 
 ### 2. Retailer Merchant Login
-* **Where Used in Frontend:** Retailer Portal Login Screen (`/login/retailer` or Retailer Login Tab)
+* **Where Used in Frontend:** Retailer Login Screen (`/retailer/login`)
 * **Endpoint:** `POST /api/auth/retailer/login`
-* **Why used:** Allows registered merchants/retailers to log in using either their registered **Email** or **10-digit Mobile number**.
+* **Why used:** Authenticates retailer using registered **10-digit mobile number** OR **email address**.
 * **Request format:**
 ```json
 {
-  "identifier": "9876543210", 
+  "identifier": "9876543210",
   "password": "password123"
 }
 ```
-*(Note: `identifier` accepts either mobile number e.g. `9876543210` or email e.g. `merchant@shop.com`)*
 * **Response format (200 OK):**
 ```json
 {
@@ -80,7 +130,6 @@
   "data": {
     "token_type": "Bearer",
     "access_token": "2|retailerTokenExampleABC987654",
-    "token": "2|retailerTokenExampleABC987654",
     "role": "retailer",
     "user": {
       "id": "RT1001",
@@ -101,12 +150,11 @@
 
 ---
 
-### 3. Get Current Authenticated Profile (`/me`)
-* **Where Used in Frontend:** App Startup / Auth Provider / Header User Badge
+### 3. Get Authenticated User Profile (`/me`)
+* **Where Used in Frontend:** App Bootstrap / Reload / Header User Badge
 * **Endpoint:** `GET /api/auth/me`
-* **Why used:** Verifies the stored Bearer token on app reload and returns the current user profile (Admin or Retailer) with live wallet balance.
+* **Why used:** Validates stored session token on page load, fetches updated role, permissions, and live wallet balance.
 * **Headers:** `Authorization: Bearer <token>`
-* **Request format:** No body
 * **Response format (200 OK):**
 ```json
 {
@@ -128,11 +176,10 @@
 ---
 
 ### 4. Logout
-* **Where Used in Frontend:** Header / Sidebar "Sign Out" button
+* **Where Used in Frontend:** Navbar / Sidebar "Sign Out"
 * **Endpoint:** `POST /api/auth/logout`
-* **Why used:** Destroys the current Sanctum access token and records an audit log.
+* **Why used:** Destroys active Sanctum Bearer token and records audit log.
 * **Headers:** `Authorization: Bearer <token>`
-* **Request format:** No body
 * **Response format (200 OK):**
 ```json
 {
@@ -144,15 +191,15 @@
 
 ---
 
-## 2. KYC Verification Services (Core Engine)
+## 2. KYC Verification Engine
 
 ### 5. Execute Instant Verification
-* **Where Used in Frontend:** Retailer Dashboard → Verification Form Modal (PAN, Aadhaar OTP, Bank Penny Drop, e-Sign)
+* **Where Used in Frontend:** Retailer Portal → Verification Form Modal (PAN, Aadhaar, Bank, e-Sign)
 * **Endpoint:** `POST /api/verifications/verify`
-* **Why used:** The primary engine that verifies customer identity. It atomically deducts the service fee from the retailer's wallet, runs the check, and logs an immutable audit record.
+* **Why used:** Core verification engine. Automatically checks wallet balance, debits service cost, runs the check, and logs an immutable audit record.
 * **Headers:** `Authorization: Bearer <token>`
 
-#### A. PAN Card Verification Request:
+#### Payload A: PAN Card Verification
 ```json
 {
   "retailer_id": "RT1001",
@@ -163,6 +210,46 @@
   }
 }
 ```
+
+#### Payload B: Aadhaar OTP Verification
+```json
+{
+  "retailer_id": "RT1001",
+  "service_type": "aadhaar",
+  "payload": {
+    "aadhaar": "987654321012",
+    "name": "Amit Kumar Verma",
+    "gender": "Male"
+  }
+}
+```
+
+#### Payload C: Bank Account Penny Drop (IMPS)
+```json
+{
+  "retailer_id": "RT1001",
+  "service_type": "bank",
+  "payload": {
+    "account": "12345678901",
+    "ifsc": "HDFC0001234",
+    "name": "Rahul Choudhary"
+  }
+}
+```
+
+#### Payload D: Consent Letter with e-Sign
+```json
+{
+  "retailer_id": "RT1001",
+  "service_type": "esign",
+  "payload": {
+    "name": "Priya Kapoor",
+    "mobile": "9876543210",
+    "purpose": "KYC verification for account opening"
+  }
+}
+```
+
 * **Success Response (200 OK):**
 ```json
 {
@@ -190,69 +277,12 @@
 }
 ```
 
-#### B. Aadhaar OTP Verification Request:
-```json
-{
-  "retailer_id": "RT1001",
-  "service_type": "aadhaar",
-  "payload": {
-    "aadhaar": "987654321012",
-    "name": "Amit Kumar Verma",
-    "gender": "Male"
-  }
-}
-```
-
-#### C. Bank Account Penny Drop Request:
-```json
-{
-  "retailer_id": "RT1001",
-  "service_type": "bank",
-  "payload": {
-    "account": "12345678901",
-    "ifsc": "HDFC0001234",
-    "name": "Rahul Choudhary"
-  }
-}
-```
-
-#### D. Consent Letter with e-Sign Request:
-```json
-{
-  "retailer_id": "RT1001",
-  "service_type": "esign",
-  "payload": {
-    "name": "Priya Kapoor",
-    "mobile": "9876543210",
-    "purpose": "KYC verification for account opening"
-  }
-}
-```
-* **Error Response when Insufficient Balance (422 Unprocessable):**
-```json
-{
-  "success": false,
-  "message": "Insufficient wallet balance. Please top up your wallet to proceed."
-}
-```
-
 ---
 
 ### 6. Filter & List Verification Records (Audit Trail)
-* **Where Used in Frontend:** 
-  * Admin Panel → Verification Audit Trail (`/admin/records`)
-  * Retailer Portal → Verification History (`/retailer/history` or `/retailer/verifications`)
-* **Endpoint:** `GET /api/verifications/records` (or `GET /api/admin/records` / `GET /api/retailer/records`)
-* **Why used:** Displays paginated verification history with live search, date filters, status breakdown (`verified`, `failed`), and stats summary.
-* **Query Parameters (All optional):**
-  * `page` (integer, e.g. `1`)
-  * `per_page` (integer, default: `12`)
-  * `retailer_id` (e.g. `RT1001` or `all`)
-  * `type` (`pan`, `aadhaar`, `bank`, `esign`, or `all`)
-  * `status` (`verified`, `failed`, or `all`)
-  * `search` (Search by Verification ID, Masked Doc, Customer Name, or Shop Name)
-  * `start_date` (`YYYY-MM-DD`)
-  * `end_date` (`YYYY-MM-DD`)
+* **Where Used in Frontend:** Admin Audit Trail (`/admin/records`) & Retailer History (`/retailer/history`)
+* **Endpoint:** `GET /api/verifications/records`
+* **Query Parameters:** `page`, `per_page`, `retailer_id`, `type`, `status`, `search`, `start_date`, `end_date`
 * **Response format (200 OK):**
 ```json
 {
@@ -280,8 +310,8 @@
       }
     ],
     "total": 142,
-    "per_page": 12,
-    "last_page": 12,
+    "per_page": 10,
+    "last_page": 15,
     "stats": {
       "total": 142,
       "verified": 136,
@@ -294,111 +324,28 @@
 
 ---
 
-## 3. Retailer Portal & Dashboard APIs
+## 3. Retailer Portal & Account Security
 
-### 7. Retailer Dashboard Overview
+### 7. Retailer Overview
 * **Where Used in Frontend:** Retailer Home Screen (`/retailer/dashboard`)
 * **Endpoint:** `GET /api/retailer/overview`
-* **Why used:** Fetches live wallet float, today's verification counts, weekly chart analytics, active services catalog with the retailer's custom pricing, and recent verification history.
-* **Headers:** `Authorization: Bearer <token>`
-* **Request format:** No body
-* **Response format (200 OK):**
-```json
-{
-  "success": true,
-  "message": "Retailer overview retrieved successfully.",
-  "data": {
-    "retailer": {
-      "id": "RT1001",
-      "shop": "Sharma Communication",
-      "owner": "Rajesh Sharma",
-      "email": "rajesh@sharmakyc.in",
-      "mobile": "9876543210",
-      "city": "Vadodara",
-      "status": "active"
-    },
-    "wallet": {
-      "balance": 4850.00,
-      "last_topup_amount": 2000.00,
-      "pending_request_amount": 0.00,
-      "pending_request_count": 0
-    },
-    "kpis": {
-      "total_verifications": 142,
-      "verified_count": 136,
-      "failed_count": 6,
-      "success_rate": 95.8,
-      "todays_verifications": 14,
-      "todays_spent": 38.50,
-      "total_spent": 354.50
-    },
-    "services": [
-      {
-        "id": "aadhaar",
-        "name": "Aadhaar Verification (OTP)",
-        "price": 3.50,
-        "status": "active"
-      },
-      {
-        "id": "pan",
-        "name": "PAN Card Verification",
-        "price": 2.25,
-        "status": "active"
-      },
-      {
-        "id": "bank",
-        "name": "Bank Penny Drop",
-        "price": 2.50,
-        "status": "active"
-      },
-      {
-        "id": "esign",
-        "name": "Consent e-Sign",
-        "price": 6.00,
-        "status": "active"
-      }
-    ],
-    "recent_verifications": []
-  }
-}
-```
+* **Why used:** Provides wallet float, today's verifications count, success rate %, active service rate cards, and recent records.
 
----
-
-### 8. Retailer Profile & Security Settings
-* **Where Used in Frontend:** Retailer Settings & Profile Page (`/retailer/settings`)
+### 8. Retailer Profile Management
+* **Where Used in Frontend:** Retailer Settings (`/retailer/settings`)
 * **Endpoints:**
   * Get Profile: `GET /api/retailer/profile`
   * Update Profile: `PUT /api/retailer/profile`
   * Change Password: `PUT /api/retailer/password`
-* **Update Profile Request:**
-```json
-{
-  "shop": "Sharma Communication & Cyber Cafe",
-  "owner": "Rajesh K. Sharma",
-  "address": "Shop 4, Near Station, Vadodara",
-  "city": "Vadodara",
-  "state": "Gujarat"
-}
-```
-* **Change Password Request:**
-```json
-{
-  "current_password": "oldPassword123",
-  "new_password": "NewSecurePassword456",
-  "new_password_confirmation": "NewSecurePassword456"
-}
-```
+  * Terminate All Sessions: `POST /api/retailer/logout-all`
 
 ---
 
-## 4. Wallet & Fund Request APIs
+## 4. Wallet, Fund Requests & Approvals
 
 ### 9. Retailer Top-Up Fund Request
 * **Where Used in Frontend:** Retailer Wallet → "Request Wallet Top-Up" Modal
 * **Endpoint:** `POST /api/wallet/fund-requests`
-* **Why used:** Retailers upload payment proof (UTR / Transaction Reference number and mode) after transferring funds to the company bank account/UPI.
-* **Headers:** `Authorization: Bearer <token>`
 * **Request format:**
 ```json
 {
@@ -409,89 +356,21 @@
   "remarks": "GooglePay transfer for weekend verifications"
 }
 ```
-*(Valid modes: `UPI`, `NEFT`, `IMPS`, `RTGS`. Minimum amount: ₹500).*
-* **Response format (201 Created):**
-```json
-{
-  "success": true,
-  "message": "Fund request of ₹2,500 submitted successfully.",
-  "data": {
-    "id": "FRQ261024K9L2P",
-    "retailer_id": "RT1001",
-    "amount": "2500.00",
-    "mode": "UPI",
-    "utr": "UTR61024889912",
-    "status": "pending",
-    "created_at": "2026-10-24T11:00:00.000000Z"
-  }
-}
-```
 
----
-
-### 10. Wallet Transactions (Ledger)
-* **Where Used in Frontend:** 
-  * Retailer Portal → Wallet Passbook (`/retailer/wallet`)
-  * Admin Portal → Wallet Ledger (`/admin/wallet`)
-* **Endpoint:** `GET /api/wallet/transactions`
-* **Query Parameters:** `page`, `per_page`, `retailer_id`, `type` (`credit` or `debit`), `search`, `start_date`, `end_date`
-* **Response format (200 OK):**
-```json
-{
-  "success": true,
-  "message": "Wallet transactions retrieved successfully.",
-  "data": {
-    "current_page": 1,
-    "data": [
-      {
-        "id": "TXN261024001",
-        "retailer_id": "RT1001",
-        "type": "credit",
-        "amount": "2500.00",
-        "balance_before": "2350.00",
-        "balance_after": "4850.00",
-        "note": "Top-up approved by Super Admin",
-        "ref": "FRQ261024K9L2P",
-        "mode": "UPI",
-        "created_at": "2026-10-24T11:05:00.000000Z"
-      },
-      {
-        "id": "TXN261024002",
-        "retailer_id": "RT1001",
-        "type": "debit",
-        "amount": "2.25",
-        "balance_before": "4850.00",
-        "balance_after": "4847.75",
-        "note": "PAN verification charge",
-        "ref": "VRF261024A1B2C",
-        "mode": "Auto Debit",
-        "created_at": "2026-10-24T11:10:00.000000Z"
-      }
-    ]
-  }
-}
-```
-
----
-
-### 11. Admin Approve / Reject Fund Request
-* **Where Used in Frontend:** Admin Portal → Wallet Approvals Tab (`/admin/wallet`)
+### 10. Admin Approve / Reject Fund Request
+* **Where Used in Frontend:** Admin Wallet Approvals (`/admin/wallet`)
 * **Endpoints:**
   * Approve: `PUT /api/admin/wallet/fund-requests/{id}/approve`
   * Reject: `PUT /api/admin/wallet/fund-requests/{id}/reject`
-* **Headers:** `Authorization: Bearer <token>`
-* **Approve Request format:** No body (or optional note)
-* **Reject Request format:**
+* **Reject Request Body:**
 ```json
 {
   "reason": "UTR number does not match bank statement"
 }
 ```
 
----
-
-### 12. Admin Manual Wallet Adjustment
-* **Where Used in Frontend:** Admin Portal → "Manual Credit / Debit" Drawer
+### 11. Admin Manual Wallet Adjustment
+* **Where Used in Frontend:** Admin Portal → Manual Adjustment Drawer
 * **Endpoint:** `POST /api/admin/wallet/adjust`
 * **Request format:**
 ```json
@@ -507,130 +386,77 @@
 
 ---
 
-## 5. Super Admin Management APIs
+## 5. Super Admin Suite & Analytics
 
-### 13. Admin Dashboard Overview & Analytics
-* **Where Used in Frontend:** Admin Home Screen (`/admin/dashboard`)
-* **Endpoint:** `GET /api/admin/overview`
-* **Why used:** Provides real-time metrics across all merchants: Total retailers, verifications count, network success rate, total platform revenue, total floating wallet balance, and service-wise breakdown chart data.
+### 12. Admin Reports & Financial Analytics *(Newly Cataloged)*
+* **Where Used in Frontend:** Admin Portal → Analytics & Reports (`/admin/reports`)
+* **Endpoint:** `GET /api/admin/reports`
+* **Query Parameters:** `start_date` (`YYYY-MM-DD`), `end_date` (`YYYY-MM-DD`)
+* **Why used:** Comprehensive analytics showing date-range verification count, success vs. failure rates, provider costs, gross margins, and daily volume breakdown.
 * **Response format (200 OK):**
 ```json
 {
   "success": true,
-  "message": "Admin dashboard overview retrieved successfully.",
+  "message": "Reports analytics retrieved successfully.",
   "data": {
     "kpis": {
-      "total_retailers": 28,
-      "active_retailers": 26,
-      "total_verifications": 4820,
-      "success_rate": 97.4,
-      "total_revenue": 14850.75,
-      "total_floating_wallet": 62400.00,
-      "todays_verifications": 182,
-      "todays_billed": 560.25
+      "total_verifications": 1240,
+      "verified_count": 1205,
+      "failed_count": 35,
+      "success_rate": 97.2,
+      "billed_amount": 3840.50,
+      "provider_cost": 2150.00,
+      "gross_margin": 1690.50,
+      "margin_pct": 44.0,
+      "active_retailers": 24
     },
-    "category_distribution": {
-      "total": 4820,
-      "items": [
-        { "id": "aadhaar", "name": "Aadhaar OTP", "count": 2100, "percentage": 43.6, "color": "#3b82f6" },
-        { "id": "pan", "name": "PAN Verification", "count": 1850, "percentage": 38.4, "color": "#10b981" },
-        { "id": "bank", "name": "Bank Penny Drop", "count": 620, "percentage": 12.9, "color": "#06b6d4" },
-        { "id": "esign", "name": "e-Sign Consent", "count": 250, "percentage": 5.1, "color": "#8b5cf6" }
-      ]
-    }
+    "daily_records": [],
+    "service_breakdown": [],
+    "retailer_leaderboard": []
   }
 }
 ```
 
 ---
 
-### 14. Retailers Management (CRUD)
-* **Where Used in Frontend:** Admin Portal → Retailers List (`/admin/retailers`)
+### 13. Platform Settings & Configurations *(Newly Cataloged)*
+* **Where Used in Frontend:** Admin Portal → System Settings (`/admin/settings`)
 * **Endpoints:**
-  * **List Retailers:** `GET /api/admin/retailers`
-  * **Create New Retailer:** `POST /api/admin/retailers`
-  * **Update Retailer:** `PUT /api/admin/retailers/{id}`
-  * **Toggle Active / Inactive:** `PUT /api/admin/retailers/{id}/status`
-* **Create Retailer Request:**
+  * Get Settings: `GET /api/admin/settings`
+  * Update Settings Section: `PUT /api/admin/settings/{section}` (`company`, `notifications`, `system`, or `providers`)
+* **Update Section Request format:**
 ```json
 {
-  "shop": "National Digital Services",
-  "owner": "Vikram Mehta",
-  "mobile": "9825012345",
-  "email": "vikram@nationaldigital.in",
-  "address": "101 City Center, Station Road",
-  "city": "Ahmedabad",
-  "state": "Gujarat",
-  "pan": "ABCDE1234F",
-  "gst": "24ABCDE1234F1Z5",
-  "password": "TemporaryPassword123",
-  "status": "active"
-}
-```
-
----
-
-### 15. Pricing Switchboard & Custom Rate Cards
-* **Where Used in Frontend:** Admin Portal → Pricing & Rates (`/admin/pricing`)
-* **Endpoints:**
-  * **Get Matrix:** `GET /api/admin/pricing` (shows standard pricing, margins, and custom retailer rate overrides)
-  * **Update Default Platform Rates:** `POST /api/admin/pricing/defaults`
-  * **Set Custom Pricing for Retailer:** `POST /api/admin/pricing/override`
-  * **Reset Retailer to Defaults:** `DELETE /api/admin/pricing/override/{retailerId}`
-* **Set Custom Retailer Price Request:**
-```json
-{
-  "retailer_id": "RT1001",
-  "pricing": {
-    "pan": 2.00,
-    "aadhaar": 3.00,
-    "bank": 2.20,
-    "esign": 5.50
-  }
-}
-```
-
----
-
-## 6. Notifications & Platform Settings APIs
-
-### 16. In-App Notifications
-* **Where Used in Frontend:** Top Navbar Notification Bell Icon
-* **Endpoints:**
-  * **Get Notifications:** `GET /api/notifications`
-  * **Mark as Read:** `PUT /api/notifications/{id}/read`
-  * **Mark All Read:** `POST /api/notifications/mark-all-read`
-* **Response format (200 OK):**
-```json
-{
-  "success": true,
   "data": {
-    "unread_count": 2,
-    "notifications": [
-      {
-        "id": "NTF_FRQ_102",
-        "title": "New fund request",
-        "text": "Sharma Communication requested a ₹2,500 wallet top-up.",
-        "type": "info",
-        "read": false,
-        "link": "/admin/wallet",
-        "created_at": "2026-10-24T11:00:00.000000Z"
-      }
-    ]
+    "low_balance_threshold": 250,
+    "min_topup": 500,
+    "session_timeout": 30,
+    "masking_level": "strict",
+    "maintenance_mode": false
   }
 }
 ```
 
 ---
 
-## 7. Standard HTTP Error Codes
-
-| Status Code | Reason | What Frontend Should Display |
-| :--- | :--- | :--- |
-| `200 OK` | Request succeeded | Show data / Success toast |
-| `201 Created` | Resource created (e.g., Fund request, Retailer) | Show success modal / redirect |
-| `401 Unauthorized` | Invalid password or expired Bearer token | Redirect to `/login` |
-| `403 Forbidden` | Inactive account or unauthorized role | Show "Access Restricted" alert |
-| `422 Unprocessable` | Validation failed or Insufficient wallet balance | Display validation errors under form fields |
-| `500 Server Error` | Unexpected backend or third-party gateway error | Show "Service temporarily unavailable" |
-
+### 14. Admin Profile, Password & Audit Logs *(Newly Cataloged)*
+* **Where Used in Frontend:** Admin Settings → Profile & Security Tab
+* **Endpoints:**
+  * Update Profile: `PUT /api/admin/profile`
+    ```json
+    {
+      "name": "Super Administrator",
+      "designation": "Head of Compliance",
+      "mobile": "9876500001"
+    }
+    ```
+  * Change Password: `PUT /api/admin/password`
+    ```json
+    {
+      "current_password": "OldAdminPassword123",
+      "new_password": "NewSecurePassword456",
+      "confirm_password": "NewSecurePassword456"
+    }
+    ```
+  * System Audit Logs: `GET /api/admin/audit-logs?page=1&search=LOGIN`
+  * Reset Demo Database: `POST /api/admin/demo-data/reset`

@@ -99,5 +99,38 @@ class NotificationTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonPath('success', true);
     }
+
+    public function test_retailer_can_retrieve_notifications(): void
+    {
+        $retailer = Retailer::find('RT1001');
+
+        $response = $this->actingAs($retailer, 'sanctum')
+            ->getJson('/api/notifications');
+
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'success',
+                'data' => [
+                    'notifications',
+                    'unread_count',
+                ],
+            ]);
+
+        $this->assertGreaterThan(0, count($response->json('data.notifications')));
+    }
+
+    public function test_retailer_can_mark_all_notifications_as_read(): void
+    {
+        $retailer = Retailer::find('RT1001');
+
+        $response = $this->actingAs($retailer, 'sanctum')
+            ->postJson('/api/notifications/mark-all-read');
+
+        $response->assertStatus(200)
+            ->assertJsonPath('success', true);
+
+        $unreadCount = Notification::where('audience', 'RT1001')->where('read', false)->count();
+        $this->assertEquals(0, $unreadCount);
+    }
 }
 

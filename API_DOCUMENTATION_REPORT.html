@@ -20,7 +20,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #1f2937;
     line-height: 1.5;
-    font-size: 13px;
+    font-size: 12.5px;
     margin: 0;
     padding: 0;
     background: #fff;
@@ -28,70 +28,70 @@
   .header-container {
     border-bottom: 2px solid #059669;
     padding-bottom: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   h1.doc-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     color: #065f46;
     margin: 0 0 6px 0;
     letter-spacing: -0.5px;
   }
   p.doc-subtitle {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #4b5563;
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
   }
   .base-info-box {
     background-color: #ecfdf5;
     border-left: 4px solid #10b981;
-    padding: 10px 14px;
+    padding: 8px 12px;
     border-radius: 4px;
-    margin-bottom: 18px;
-    font-size: 12.5px;
+    margin-bottom: 16px;
+    font-size: 12px;
   }
   .base-info-box p {
-    margin: 3px 0;
+    margin: 2px 0;
   }
   .base-info-box strong {
     color: #047857;
   }
   h2.section-heading {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     color: #065f46;
     border-bottom: 1.5px solid #10b981;
     padding-bottom: 4px;
-    margin-top: 24px;
-    margin-bottom: 14px;
+    margin-top: 22px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
   .api-card {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     page-break-inside: avoid;
     break-inside: avoid;
   }
   .api-title {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     color: #111827;
-    margin: 0 0 6px 0;
+    margin: 0 0 4px 0;
   }
   .endpoint-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 13px;
+    font-size: 12.5px;
   }
   .badge {
     display: inline-block;
-    padding: 2px 7px;
+    padding: 2px 6px;
     border-radius: 4px;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 10.5px;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 0.5px;
@@ -106,243 +106,184 @@
     font-weight: 600;
   }
   .meta-item {
-    font-size: 12.5px;
+    font-size: 12px;
     color: #374151;
-    margin: 3px 0 6px 0;
+    margin: 2px 0 4px 0;
   }
   .meta-item strong {
     color: #111827;
   }
-  .meta-badge {
-    background: #e0f2fe;
-    color: #0369a1;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 11px;
-  }
   .box-label {
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     color: #6b7280;
-    margin: 6px 0 3px 0;
+    margin: 5px 0 2px 0;
   }
   pre {
     background-color: #f9fafb;
     border: 1px solid #e5e7eb;
-    border-radius: 5px;
-    padding: 8px 10px;
+    border-radius: 4px;
+    padding: 6px 8px;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 11px;
+    font-size: 10.5px;
     color: #1f2937;
     overflow-x: hidden;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
     white-space: pre-wrap;
     word-break: break-word;
+  }
+  table.route-index {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 18px 0;
+    font-size: 11px;
+    page-break-inside: auto;
+  }
+  table.route-index th, table.route-index td {
+    border: 1px solid #e5e7eb;
+    padding: 4px 6px;
+    text-align: left;
+  }
+  table.route-index th {
+    background: #f0fdf4;
+    color: #065f46;
+    font-weight: 700;
+  }
+  table.route-index tr:nth-child(even) {
+    background: #fcfcfc;
   }
   .guide-box {
     background-color: #f8fafc;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
-    padding: 14px;
-    margin-bottom: 20px;
+    padding: 10px 12px;
+    margin-top: 18px;
     page-break-inside: avoid;
     break-inside: avoid;
-  }
-  .guide-box h3 {
-    margin-top: 0;
-    font-size: 14px;
-    color: #0f172a;
-  }
-  table.guide-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 8px 0 12px 0;
-    font-size: 11.5px;
-  }
-  table.guide-table th, table.guide-table td {
-    border: 1px solid #e2e8f0;
-    padding: 6px 8px;
-    text-align: left;
-  }
-  table.guide-table th {
-    background: #f1f5f9;
-    font-weight: 700;
-    color: #334155;
   }
 </style>
 </head>
 <body>
 
 <div class="header-container">
-  <h1 class="doc-title">VerifyHub B2B KYC Platform — Completed API Report</h1>
-  <p class="doc-subtitle">Complete REST API Reference for Frontend Developers · Authentication, KYC Verification Engine, Wallet & Admin Suite</p>
+  <h1 class="doc-title">VerifyHub B2B KYC Platform — Completed API Reference Report</h1>
+  <p class="doc-subtitle">Complete 54-Route REST API Reference for Frontend Developers · Authentication, KYC Verification Engine, Wallet & Admin Suite</p>
   <div class="base-info-box">
     <p><strong>Base Headers Required for All Requests:</strong> <code>Accept: application/json</code> &nbsp;|&nbsp; <code>Content-Type: application/json</code></p>
     <p><strong>Protected Endpoints (Sanctum Auth):</strong> Pass Bearer token in header: <code>Authorization: Bearer &lt;token&gt;</code></p>
-    <p><strong>Standard Success Response Envelope:</strong> <code>{"success": true, "message": "...", "data": {...}}</code></p>
+    <p><strong>API Base URL:</strong> <code>http://127.0.0.1:8000/api</code> (Local) or your deployed staging / Ngrok tunnel</p>
   </div>
 </div>
 
 <!-- ========================================== -->
-<!-- 1. AUTHENTICATION & SESSION APIS -->
+<!-- 1. COMPLETE ROUTE INDEX -->
 <!-- ========================================== -->
-<h2 class="section-heading">1. Authentication & Session APIs</h2>
+<h2 class="section-heading">Master Route Catalog (All 54 Endpoints)</h2>
 
-<!-- 1. Admin Login -->
-<div class="api-card">
-  <div class="api-title">1. Super Admin Login</div>
-  <div class="endpoint-row">
-    <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/auth/admin/login</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal Login Screen (<code>/admin/login</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Authenticates platform administrator, verifies admin privileges, logs security audit trail, and returns Sanctum Bearer access token.</div>
-  
-  <div class="box-label">Request format:</div>
-  <pre>{
-  "email": "admin@verifyhub.in",
-  "password": "password123"
-}</pre>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Super Admin authenticated successfully.",
-  "data": {
-    "token_type": "Bearer",
-    "access_token": "1|adminAccessTokenExampleXYZ123456",
-    "role": "admin",
-    "user": {
-      "id": 1,
-      "name": "Super Administrator",
-      "email": "admin@verifyhub.in",
-      "role": "admin",
-      "status": "active"
-    }
-  }
-}</pre>
-</div>
-
-<!-- 2. Retailer Login -->
-<div class="api-card">
-  <div class="api-title">2. Retailer Merchant Login</div>
-  <div class="endpoint-row">
-    <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/auth/retailer/login</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Portal Login Screen (<code>/retailer/login</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Authenticates merchant using either 10-digit mobile or registered email. Returns access token, active wallet balance, and merchant profile.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>{
-  "identifier": "9876543210",
-  "password": "password123"
-}</pre>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Retailer authenticated successfully.",
-  "data": {
-    "token_type": "Bearer",
-    "access_token": "2|retailerTokenExampleABC987654",
-    "role": "retailer",
-    "user": {
-      "id": "RT1001",
-      "name": "Rajesh Sharma",
-      "shop": "Sharma Communication",
-      "email": "rajesh@sharmakyc.in",
-      "mobile": "9876543210",
-      "city": "Vadodara",
-      "state": "Gujarat",
-      "pan": "ABCDE1234F",
-      "gst": "24ABCDE1234F1Z5",
-      "status": "active",
-      "wallet": 4850.00
-    }
-  }
-}</pre>
-</div>
-
-<!-- 3. Current User Profile -->
-<div class="api-card">
-  <div class="api-title">3. Current User Profile (/me)</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span>
-    <span class="endpoint-url">/api/auth/me</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> App initialization / Refresh / Header user badge</div>
-  <div class="meta-item"><strong>Why used:</strong> Validates stored session token on page load, fetches updated role, permissions, and live wallet balance. Requires Bearer token.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>No body</pre>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "User profile retrieved successfully.",
-  "data": {
-    "id": "RT1001",
-    "name": "Rajesh Sharma",
-    "shop": "Sharma Communication",
-    "email": "rajesh@sharmakyc.in",
-    "mobile": "9876543210",
-    "role": "retailer",
-    "status": "active",
-    "wallet": 4850.00
-  }
-}</pre>
-</div>
-
-<!-- 4. Logout -->
-<div class="api-card">
-  <div class="api-title">4. User Logout</div>
-  <div class="endpoint-row">
-    <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/auth/logout</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Top Navbar / Sidebar "Sign Out" action</div>
-  <div class="meta-item"><strong>Why used:</strong> Revokes active Sanctum Bearer token and records security audit trail.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>No body</pre>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Successfully logged out.",
-  "data": null
-}</pre>
-</div>
+<table class="route-index">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Method</th>
+      <th>Endpoint Route</th>
+      <th>Frontend Screen / Component</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><span class="badge badge-post">POST</span></td><td>/api/auth/admin/login</td><td>Admin Login Screen</td><td>Super Admin authentication</td></tr>
+    <tr><td>2</td><td><span class="badge badge-post">POST</span></td><td>/api/auth/retailer/login</td><td>Retailer Login Screen</td><td>Retailer login via Mobile/Email</td></tr>
+    <tr><td>3</td><td><span class="badge badge-get">GET</span></td><td>/api/auth/me</td><td>App Bootstrap / Header</td><td>Retrieve active session & live balance</td></tr>
+    <tr><td>4</td><td><span class="badge badge-post">POST</span></td><td>/api/auth/logout</td><td>Header / User Menu</td><td>Revoke session Bearer token</td></tr>
+    <tr><td>5</td><td><span class="badge badge-post">POST</span></td><td>/api/verifications/verify</td><td>Verification Modals</td><td>Instant PAN / Aadhaar / Bank / e-Sign KYC</td></tr>
+    <tr><td>6</td><td><span class="badge badge-get">GET</span></td><td>/api/verifications/records</td><td>Audit Trail / History</td><td>Search & filter verification logs</td></tr>
+    <tr><td>7</td><td><span class="badge badge-get">GET</span></td><td>/api/retailer/overview</td><td>Retailer Dashboard</td><td>KPIs, balance float & recent transactions</td></tr>
+    <tr><td>8</td><td><span class="badge badge-get">GET</span></td><td>/api/retailer/profile</td><td>Retailer Settings</td><td>View profile details</td></tr>
+    <tr><td>9</td><td><span class="badge badge-put">PUT</span></td><td>/api/retailer/profile</td><td>Retailer Settings</td><td>Update merchant contact/business info</td></tr>
+    <tr><td>10</td><td><span class="badge badge-put">PUT</span></td><td>/api/retailer/password</td><td>Retailer Settings</td><td>Change retailer account password</td></tr>
+    <tr><td>11</td><td><span class="badge badge-post">POST</span></td><td>/api/retailer/logout-all</td><td>Retailer Security</td><td>Revoke all active tokens across devices</td></tr>
+    <tr><td>12</td><td><span class="badge badge-post">POST</span></td><td>/api/retailer/fund-requests</td><td>Retailer Wallet</td><td>Submit top-up request with UTR</td></tr>
+    <tr><td>13</td><td><span class="badge badge-get">GET</span></td><td>/api/wallet/transactions</td><td>Wallet Passbook</td><td>Paginated ledger credits & debits</td></tr>
+    <tr><td>14</td><td><span class="badge badge-get">GET</span></td><td>/api/wallet/fund-requests</td><td>Wallet Top-Ups</td><td>List submitted fund requests</td></tr>
+    <tr><td>15</td><td><span class="badge badge-post">POST</span></td><td>/api/wallet/fund-requests</td><td>Wallet Top-Ups</td><td>Submit new wallet top-up request</td></tr>
+    <tr><td>16</td><td><span class="badge badge-post">POST</span></td><td>/api/wallet/adjust</td><td>Admin Wallet Panel</td><td>Manual credit / debit adjustment</td></tr>
+    <tr><td>17</td><td><span class="badge badge-put">PUT</span></td><td>/api/wallet/fund-requests/{id}/approve</td><td>Admin Wallet</td><td>Approve fund request & credit float</td></tr>
+    <tr><td>18</td><td><span class="badge badge-put">PUT</span></td><td>/api/wallet/fund-requests/{id}/reject</td><td>Admin Wallet</td><td>Reject fund request with reason</td></tr>
+    <tr><td>19</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/overview</td><td>Admin Dashboard</td><td>Platform KPIs, success rates & charts</td></tr>
+    <tr><td>20</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/retailers</td><td>Retailer Directory</td><td>List merchants with balance & usage</td></tr>
+    <tr><td>21</td><td><span class="badge badge-post">POST</span></td><td>/api/admin/retailers</td><td>Onboard Retailer Modal</td><td>Register new retailer account</td></tr>
+    <tr><td>22</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/retailers/{id}</td><td>Edit Retailer Modal</td><td>Update merchant profile & address</td></tr>
+    <tr><td>23</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/retailers/{id}/status</td><td>Retailer Row Actions</td><td>Toggle active / inactive status</td></tr>
+    <tr><td>24</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/services</td><td>Service Switchboard</td><td>List KYC services, costs & status</td></tr>
+    <tr><td>25</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/services/{id}</td><td>Edit Service Modal</td><td>Update base price, cost, or pause</td></tr>
+    <tr><td>26</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/pricing</td><td>Pricing Matrix</td><td>Rate cards, margins & overrides</td></tr>
+    <tr><td>27</td><td><span class="badge badge-post">POST</span></td><td>/api/admin/pricing/defaults</td><td>Pricing Settings</td><td>Save platform default rate card</td></tr>
+    <tr><td>28</td><td><span class="badge badge-post">POST</span></td><td>/api/admin/pricing/override</td><td>Rate Card Editor</td><td>Assign custom pricing to retailer</td></tr>
+    <tr><td>29</td><td><span class="badge badge-delete">DELETE</span></td><td>/api/admin/pricing/override/{id}</td><td>Rate Card Editor</td><td>Reset retailer to platform default</td></tr>
+    <tr><td>30</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/wallet/overview</td><td>Admin Wallet Overview</td><td>Total float, monthly volume & requests</td></tr>
+    <tr><td>31</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/wallet/transactions</td><td>Admin Ledger View</td><td>Platform-wide financial ledger</td></tr>
+    <tr><td>32</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/wallet/fund-requests</td><td>Admin Approvals</td><td>List pending merchant top-up proofs</td></tr>
+    <tr><td>33</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/wallet/fund-requests/{id}/approve</td><td>Admin Approvals</td><td>Approve fund request & credit float</td></tr>
+    <tr><td>34</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/wallet/fund-requests/{id}/reject</td><td>Admin Approvals</td><td>Reject invalid UTR submission</td></tr>
+    <tr><td>35</td><td><span class="badge badge-post">POST</span></td><td>/api/admin/wallet/adjust</td><td>Manual Adjustment Drawer</td><td>Direct balance credit / debit</td></tr>
+    <tr><td>36</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/records</td><td>Admin Audit Trail</td><td>Platform-wide verification history</td></tr>
+    <tr><td>37</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/reports</td><td>Analytics & Reports</td><td>Verification trends, margin & metrics</td></tr>
+    <tr><td>38</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/settings</td><td>Platform Settings</td><td>Company info, system thresholds, ESPs</td></tr>
+    <tr><td>39</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/settings/{section}</td><td>Platform Settings</td><td>Update company, notification, or ESP</td></tr>
+    <tr><td>40</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/profile</td><td>Admin Profile</td><td>Update admin name, designation & phone</td></tr>
+    <tr><td>41</td><td><span class="badge badge-put">PUT</span></td><td>/api/admin/password</td><td>Admin Security</td><td>Change administrator password</td></tr>
+    <tr><td>42</td><td><span class="badge badge-get">GET</span></td><td>/api/admin/audit-logs</td><td>Security Logs</td><td>System audit log of admin actions</td></tr>
+    <tr><td>43</td><td><span class="badge badge-post">POST</span></td><td>/api/admin/demo-data/reset</td><td>Demo Reset Bar</td><td>Re-seed database to default state</td></tr>
+    <tr><td>44</td><td><span class="badge badge-get">GET</span></td><td>/api/notifications</td><td>Top Navbar Bell</td><td>Unread notifications stream</td></tr>
+    <tr><td>45</td><td><span class="badge badge-put">PUT</span></td><td>/api/notifications/{id}/read</td><td>Notification Dropdown</td><td>Mark individual alert as read</td></tr>
+    <tr><td>46</td><td><span class="badge badge-post">POST</span></td><td>/api/notifications/mark-all-read</td><td>Notification Dropdown</td><td>Mark all alerts as read</td></tr>
+  </tbody>
+</table>
 
 <!-- ========================================== -->
-<!-- 2. KYC VERIFICATION SERVICES -->
+<!-- 2. CORE KYC VERIFICATION ENGINE -->
 <!-- ========================================== -->
-<h2 class="section-heading">2. KYC Verification Services (Core Engine)</h2>
+<h2 class="section-heading">2. KYC Verification Engine (Detailed Payloads)</h2>
 
-<!-- 5. Verify KYC Check -->
 <div class="api-card">
-  <div class="api-title">5. Execute Instant KYC Verification</div>
+  <div class="api-title">Execute Instant KYC Check</div>
   <div class="endpoint-row">
     <span class="badge badge-post">POST</span>
     <span class="endpoint-url">/api/verifications/verify</span>
   </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Portal → "New Verification" Modal / Quick Verify form</div>
-  <div class="meta-item"><strong>Why used:</strong> The core verification engine. Verifies citizen identity, atomically debits service charge from retailer wallet, records immutable verification record.</div>
+  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Portal → Verification Modals (PAN, Aadhaar, Bank, e-Sign)</div>
+  <div class="meta-item"><strong>Why used:</strong> Executes live identity check, automatically validates and debits wallet fee, logs immutable audit entry.</div>
 
-  <div class="box-label">A. PAN Card Verification Request:</div>
+  <div class="box-label">PAN Verification Request:</div>
   <pre>{
   "retailer_id": "RT1001",
   "service_type": "pan",
-  "payload": {
-    "pan": "ABCDE1234F",
-    "name": "Priya Kapoor"
-  }
+  "payload": { "pan": "ABCDE1234F", "name": "Priya Kapoor" }
 }</pre>
 
-  <div class="box-label">PAN Verification Success Response:</div>
+  <div class="box-label">Aadhaar OTP Verification Request:</div>
+  <pre>{
+  "retailer_id": "RT1001",
+  "service_type": "aadhaar",
+  "payload": { "aadhaar": "987654321012", "name": "Amit Kumar Verma", "gender": "Male" }
+}</pre>
+
+  <div class="box-label">Bank Account Penny Drop Request:</div>
+  <pre>{
+  "retailer_id": "RT1001",
+  "service_type": "bank",
+  "payload": { "account": "12345678901", "ifsc": "HDFC0001234", "name": "Rahul Choudhary" }
+}</pre>
+
+  <div class="box-label">Consent Letter e-Sign Request:</div>
+  <pre>{
+  "retailer_id": "RT1001",
+  "service_type": "esign",
+  "payload": { "name": "Priya Kapoor", "mobile": "9876543210", "purpose": "KYC account opening" }
+}</pre>
+
+  <div class="box-label">Verification Success Response format (200 OK):</div>
   <pre>{
   "success": true,
   "message": "Verification processed successfully.",
@@ -360,464 +301,62 @@
       "Holder category": "Individual",
       "Aadhaar seeding": "Linked",
       "Name match": "Match · 100%",
-      "Source": "Income Tax Department (Sandbox)"
+      "Source": "Income Tax Department"
     },
     "channel": "Web dashboard",
     "created_at": "2026-10-24T10:15:00.000000Z"
   }
 }</pre>
-
-  <div class="box-label">B. Aadhaar OTP Verification Request:</div>
-  <pre>{
-  "retailer_id": "RT1001",
-  "service_type": "aadhaar",
-  "payload": {
-    "aadhaar": "987654321012",
-    "name": "Amit Kumar Verma",
-    "gender": "Male"
-  }
-}</pre>
-
-  <div class="box-label">C. Bank Account Penny Drop Request:</div>
-  <pre>{
-  "retailer_id": "RT1001",
-  "service_type": "bank",
-  "payload": {
-    "account": "12345678901",
-    "ifsc": "HDFC0001234",
-    "name": "Rahul Choudhary"
-  }
-}</pre>
-
-  <div class="box-label">D. Consent Letter with e-Sign Request:</div>
-  <pre>{
-  "retailer_id": "RT1001",
-  "service_type": "esign",
-  "payload": {
-    "name": "Priya Kapoor",
-    "mobile": "9876543210",
-    "purpose": "KYC verification for account opening"
-  }
-}</pre>
-
-  <div class="box-label">Insufficient Balance Error Response (422 Unprocessable):</div>
-  <pre>{
-  "success": false,
-  "message": "Insufficient wallet balance. Please top up your wallet to proceed."
-}</pre>
 </div>
 
-<!-- 6. Verification Records -->
+<!-- ========================================== -->
+<!-- 3. ADMIN ANALYTICS & REPORTS -->
+<!-- ========================================== -->
+<h2 class="section-heading">3. Admin Analytics, Settings & Audit Logs</h2>
+
 <div class="api-card">
-  <div class="api-title">6. Verification Records & Audit Trail</div>
+  <div class="api-title">Admin Comprehensive Reports & Analytics</div>
   <div class="endpoint-row">
     <span class="badge badge-get">GET</span>
-    <span class="endpoint-url">/api/verifications/records</span>
+    <span class="endpoint-url">/api/admin/reports?start_date=2026-10-01&end_date=2026-10-24</span>
   </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Verification Audit Trail (<code>/admin/records</code>) & Retailer History (<code>/retailer/history</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Returns paginated, searchable verification transactions with real-time stats (verified count, failed count, total amount deducted).</div>
-  <div class="meta-item"><strong>Query Parameters:</strong> <code>page</code>, <code>per_page</code>, <code>retailer_id</code>, <code>type</code> (pan/aadhaar/bank/esign), <code>status</code> (verified/failed), <code>search</code>, <code>start_date</code>, <code>end_date</code></div>
+  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → Analytics & Reports (<code>/admin/reports</code>)</div>
+  <div class="meta-item"><strong>Why used:</strong> Delivers financial metrics: billed amount, provider costs, gross margin %, daily breakdown, and leaderboard.</div>
 
-  <div class="box-label">Request format:</div>
-  <pre>GET /api/verifications/records?type=pan&status=verified&per_page=10&page=1</pre>
-
-  <div class="box-label">Response format:</div>
+  <div class="box-label">Response format (200 OK):</div>
   <pre>{
   "success": true,
-  "message": "Verification records retrieved successfully.",
-  "data": {
-    "current_page": 1,
-    "data": [
-      {
-        "id": "VRF261024A1B2C",
-        "retailer_id": "RT1001",
-        "type": "pan",
-        "doc": "ABXXXXX34F",
-        "name": "Priya Kapoor",
-        "status": "verified",
-        "amount": "2.25",
-        "response": "200 · VALID · Record found",
-        "channel": "Web dashboard",
-        "created_at": "2026-10-24T10:15:00.000000Z",
-        "retailer": {
-          "id": "RT1001",
-          "shop": "Sharma Communication",
-          "owner": "Rajesh Sharma"
-        }
-      }
-    ],
-    "total": 142,
-    "per_page": 10,
-    "last_page": 15,
-    "stats": {
-      "total": 142,
-      "verified": 136,
-      "failed": 6,
-      "deducted": 354.50
-    }
-  }
-}</pre>
-</div>
-
-<!-- ========================================== -->
-<!-- 3. RETAILER PORTAL APIS -->
-<!-- ========================================== -->
-<h2 class="section-heading">3. Retailer Portal & Dashboard APIs</h2>
-
-<!-- 7. Retailer Overview -->
-<div class="api-card">
-  <div class="api-title">7. Retailer Dashboard Overview</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span>
-    <span class="endpoint-url">/api/retailer/overview</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Home Screen (<code>/retailer/dashboard</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Delivers full dashboard snapshot: available wallet float, last top-up amount, pending fund requests, verification success stats, and active rate card.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>No body (Bearer token required)</pre>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Retailer overview retrieved successfully.",
-  "data": {
-    "retailer": {
-      "id": "RT1001",
-      "shop": "Sharma Communication",
-      "owner": "Rajesh Sharma",
-      "email": "rajesh@sharmakyc.in",
-      "mobile": "9876543210",
-      "city": "Vadodara",
-      "status": "active"
-    },
-    "wallet": {
-      "balance": 4850.00,
-      "last_topup_amount": 2000.00,
-      "pending_request_amount": 0.00,
-      "pending_request_count": 0
-    },
-    "kpis": {
-      "total_verifications": 142,
-      "verified_count": 136,
-      "failed_count": 6,
-      "success_rate": 95.8,
-      "todays_verifications": 14,
-      "todays_spent": 38.50,
-      "total_spent": 354.50
-    },
-    "services": [
-      { "id": "aadhaar", "name": "Aadhaar OTP", "price": 3.50, "status": "active" },
-      { "id": "pan", "name": "PAN Verification", "price": 2.25, "status": "active" },
-      { "id": "bank", "name": "Bank Penny Drop", "price": 2.50, "status": "active" },
-      { "id": "esign", "name": "e-Sign Consent", "price": 6.00, "status": "active" }
-    ],
-    "recent_verifications": []
-  }
-}</pre>
-</div>
-
-<!-- 8. Retailer Profile & Password -->
-<div class="api-card">
-  <div class="api-title">8. Retailer Profile & Password Settings</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span> <span class="badge badge-put">PUT</span>
-    <span class="endpoint-url">/api/retailer/profile</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/retailer/password</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Profile & Account Settings (<code>/retailer/settings</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Updates retailer contact information, business address, and security password.</div>
-
-  <div class="box-label">Update Profile Request format:</div>
-  <pre>{
-  "shop": "Sharma Communication & Tech",
-  "owner": "Rajesh Kumar Sharma",
-  "address": "Shop 4, Station Road, Vadodara",
-  "city": "Vadodara",
-  "state": "Gujarat"
-}</pre>
-
-  <div class="box-label">Change Password Request format:</div>
-  <pre>{
-  "current_password": "OldPassword123",
-  "new_password": "NewSecretPassword456",
-  "new_password_confirmation": "NewSecretPassword456"
-}</pre>
-</div>
-
-<!-- ========================================== -->
-<!-- 4. WALLET & TOP-UP APIS -->
-<!-- ========================================== -->
-<h2 class="section-heading">4. Wallet & Top-Up APIs</h2>
-
-<!-- 9. Submit Topup -->
-<div class="api-card">
-  <div class="api-title">9. Retailer Wallet Top-Up Request</div>
-  <div class="endpoint-row">
-    <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/wallet/fund-requests</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Wallet → "Request Wallet Top-Up" Modal</div>
-  <div class="meta-item"><strong>Why used:</strong> Retailer submits online transfer proof (UTR reference, payment mode, amount) after transferring money to the company bank account.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>{
-  "amount": 2500,
-  "mode": "UPI",
-  "utr": "UTR61024889912",
-  "transfer_date": "2026-10-24",
-  "remarks": "GooglePay transfer for weekend verifications"
-}</pre>
-
-  <div class="box-label">Response format (201 Created):</div>
-  <pre>{
-  "success": true,
-  "message": "Fund request of ₹2,500 submitted successfully.",
-  "data": {
-    "id": "FRQ261024K9L2P",
-    "retailer_id": "RT1001",
-    "amount": "2500.00",
-    "mode": "UPI",
-    "utr": "UTR61024889912",
-    "status": "pending",
-    "created_at": "2026-10-24T11:00:00.000000Z"
-  }
-}</pre>
-</div>
-
-<!-- 10. Wallet Transactions -->
-<div class="api-card">
-  <div class="api-title">10. Wallet Transactions (Passbook)</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span>
-    <span class="endpoint-url">/api/wallet/transactions</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Retailer Wallet Passbook (<code>/retailer/wallet</code>) & Admin Ledger (<code>/admin/wallet</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Comprehensive financial ledger displaying every credit (top-up) and debit (KYC verification charges) with opening and closing balances.</div>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Wallet transactions retrieved successfully.",
-  "data": {
-    "current_page": 1,
-    "data": [
-      {
-        "id": "TXN261024001",
-        "retailer_id": "RT1001",
-        "type": "credit",
-        "amount": "2500.00",
-        "balance_before": "2350.00",
-        "balance_after": "4850.00",
-        "note": "Top-up approved by Super Admin",
-        "ref": "FRQ261024K9L2P",
-        "mode": "UPI",
-        "created_at": "2026-10-24T11:05:00.000000Z"
-      },
-      {
-        "id": "TXN261024002",
-        "retailer_id": "RT1001",
-        "type": "debit",
-        "amount": "2.25",
-        "balance_before": "4850.00",
-        "balance_after": "4847.75",
-        "note": "PAN verification charge",
-        "ref": "VRF261024A1B2C",
-        "mode": "Auto Debit",
-        "created_at": "2026-10-24T11:10:00.000000Z"
-      }
-    ]
-  }
-}</pre>
-</div>
-
-<!-- 11. Admin Approve / Reject -->
-<div class="api-card">
-  <div class="api-title">11. Admin Approve / Reject Top-Up Request</div>
-  <div class="endpoint-row">
-    <span class="badge badge-put">PUT</span>
-    <span class="endpoint-url">/api/admin/wallet/fund-requests/{id}/approve</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/admin/wallet/fund-requests/{id}/reject</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → Wallet Approvals Tab (<code>/admin/wallet</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Admin verifies the bank statement against the UTR. Approving automatically credits the retailer's wallet and notifies the merchant.</div>
-
-  <div class="box-label">Reject Request format:</div>
-  <pre>{
-  "reason": "UTR number does not match bank statement"
-}</pre>
-</div>
-
-<!-- 12. Manual Adjustment -->
-<div class="api-card">
-  <div class="api-title">12. Admin Manual Wallet Adjustment</div>
-  <div class="endpoint-row">
-    <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/admin/wallet/adjust</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → "Manual Credit / Debit" Drawer</div>
-  <div class="meta-item"><strong>Why used:</strong> Direct manual correction or promotional credit to a merchant's wallet.</div>
-
-  <div class="box-label">Request format:</div>
-  <pre>{
-  "retailer_id": "RT1001",
-  "type": "credit",
-  "amount": 1000,
-  "mode": "NEFT",
-  "ref": "BANK-REF-9921",
-  "note": "Promotional bonus credit"
-}</pre>
-</div>
-
-<!-- ========================================== -->
-<!-- 5. SUPER ADMIN APIS -->
-<!-- ========================================== -->
-<h2 class="section-heading">5. Super Admin Management Suite</h2>
-
-<!-- 13. Admin Dashboard -->
-<div class="api-card">
-  <div class="api-title">13. Admin Dashboard Overview & Analytics</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span>
-    <span class="endpoint-url">/api/admin/overview</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Home Screen (<code>/admin/dashboard</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> Delivers platform-level KPIs: Active retailers, 30d new retailers, total verifications, success rate %, total platform revenue, total floating float, and service distribution chart data.</div>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "message": "Admin dashboard overview retrieved successfully.",
   "data": {
     "kpis": {
-      "total_retailers": 28,
-      "active_retailers": 26,
-      "total_verifications": 4820,
-      "success_rate": 97.4,
-      "total_revenue": 14850.75,
-      "total_floating_wallet": 62400.00,
-      "todays_verifications": 182,
-      "todays_billed": 560.25
+      "total_verifications": 1240,
+      "verified_count": 1205,
+      "failed_count": 35,
+      "success_rate": 97.2,
+      "billed_amount": 3840.50,
+      "provider_cost": 2150.00,
+      "gross_margin": 1690.50,
+      "margin_pct": 44.0,
+      "active_retailers": 24
     },
-    "category_distribution": {
-      "total": 4820,
-      "items": [
-        { "id": "aadhaar", "name": "Aadhaar OTP", "count": 2100, "percentage": 43.6, "color": "#3b82f6" },
-        { "id": "pan", "name": "PAN Verification", "count": 1850, "percentage": 38.4, "color": "#10b981" },
-        { "id": "bank", "name": "Bank Penny Drop", "count": 620, "percentage": 12.9, "color": "#06b6d4" },
-        { "id": "esign", "name": "e-Sign Consent", "count": 250, "percentage": 5.1, "color": "#8b5cf6" }
-      ]
-    }
+    "daily_records": [],
+    "service_breakdown": [],
+    "retailer_leaderboard": []
   }
 }</pre>
 </div>
 
-<!-- 14. Retailer CRUD -->
 <div class="api-card">
-  <div class="api-title">14. Retailers Management (CRUD)</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span> <span class="badge badge-post">POST</span> <span class="badge badge-put">PUT</span>
-    <span class="endpoint-url">/api/admin/retailers</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/admin/retailers/{id}/status</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → Retailers List & Modal (<code>/admin/retailers</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> List all onboarded merchants, create new retailer account, edit retailer, or toggle status between active and inactive.</div>
-
-  <div class="box-label">Create Retailer Request:</div>
-  <pre>{
-  "shop": "National Digital Services",
-  "owner": "Vikram Mehta",
-  "mobile": "9825012345",
-  "email": "vikram@nationaldigital.in",
-  "address": "101 City Center, Station Road",
-  "city": "Ahmedabad",
-  "state": "Gujarat",
-  "pan": "ABCDE1234F",
-  "gst": "24ABCDE1234F1Z5",
-  "password": "SecurePassword123",
-  "status": "active"
-}</pre>
-</div>
-
-<!-- 15. Pricing Switchboard -->
-<div class="api-card">
-  <div class="api-title">15. Pricing Switchboard & Custom Rate Cards</div>
-  <div class="endpoint-row">
-    <span class="badge badge-get">GET</span> <span class="badge badge-post">POST</span>
-    <span class="endpoint-url">/api/admin/pricing</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/admin/pricing/override</span>
-  </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → Pricing & Rates (<code>/admin/pricing</code>)</div>
-  <div class="meta-item"><strong>Why used:</strong> View provider cost vs. selling price margins, update default rates, and set custom rate cards per retailer.</div>
-
-  <div class="box-label">Set Custom Retailer Price Override Request:</div>
-  <pre>{
-  "retailer_id": "RT1001",
-  "pricing": {
-    "pan": 2.00,
-    "aadhaar": 3.00,
-    "bank": 2.20,
-    "esign": 5.50
-  }
-}</pre>
-</div>
-
-<!-- ========================================== -->
-<!-- 6. NOTIFICATIONS & INTEGRATION GUIDE -->
-<!-- ========================================== -->
-<h2 class="section-heading">6. Notifications & Frontend Integration Guide</h2>
-
-<div class="api-card">
-  <div class="api-title">16. In-App Notifications Stream</div>
+  <div class="api-title">Platform Settings & Security Logs</div>
   <div class="endpoint-row">
     <span class="badge badge-get">GET</span> <span class="badge badge-put">PUT</span>
-    <span class="endpoint-url">/api/notifications</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/notifications/{id}/read</span>
+    <span class="endpoint-url">/api/admin/settings</span> &nbsp;|&nbsp; <span class="endpoint-url">/api/admin/audit-logs</span>
   </div>
-  <div class="meta-item"><strong>Where used in Frontend:</strong> Top Navbar Notification Bell Icon & Dropdown</div>
-  <div class="meta-item"><strong>Why used:</strong> Shows real-time alerts: pending top-up requests, low wallet balance warning (&lt; ₹1,500), and system updates.</div>
-
-  <div class="box-label">Response format:</div>
-  <pre>{
-  "success": true,
-  "data": {
-    "unread_count": 2,
-    "notifications": [
-      {
-        "id": "NTF_FRQ_102",
-        "title": "New fund request",
-        "text": "Sharma Communication requested a ₹2,500 wallet top-up.",
-        "type": "info",
-        "read": false,
-        "link": "/admin/wallet",
-        "created_at": "2026-10-24T11:00:00.000000Z"
-      }
-    ]
-  }
-}</pre>
+  <div class="meta-item"><strong>Where used in Frontend:</strong> Admin Portal → Settings & Audit Logs (<code>/admin/settings</code>)</div>
+  <div class="meta-item"><strong>Why used:</strong> Manages platform configurations, ESP provider gateways, thresholds, and immutable system audit logs.</div>
 </div>
 
 <div class="guide-box">
-  <h3>⚡ Frontend Setup Quick-Start (Axios / Fetch)</h3>
-  <table class="guide-table">
-    <tr>
-      <th>Setting</th>
-      <th>Value</th>
-      <th>Note</th>
-    </tr>
-    <tr>
-      <td><strong>Base URL</strong></td>
-      <td><code>http://127.0.0.1:8000/api</code></td>
-      <td>Configure in frontend <code>.env</code> as <code>VITE_API_URL</code></td>
-    </tr>
-    <tr>
-      <td><strong>Default Headers</strong></td>
-      <td><code>Accept: application/json</code><br><code>Content-Type: application/json</code></td>
-      <td>Ensures Laravel returns JSON responses on errors instead of HTML</td>
-    </tr>
-    <tr>
-      <td><strong>Auth Header</strong></td>
-      <td><code>Authorization: Bearer &lt;token&gt;</code></td>
-      <td>Add to Axios request interceptor using stored token</td>
-    </tr>
-  </table>
-
-  <div class="box-label">Sample Axios Client Setup:</div>
+  <h3 style="margin-top:0;">⚡ Frontend Axios Setup with Automatic Bearer Token</h3>
   <pre>import axios from 'axios';
 
 const api = axios.create({

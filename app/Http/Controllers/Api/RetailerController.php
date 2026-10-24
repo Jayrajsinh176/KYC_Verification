@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Retailer;
 use App\Models\Wallet;
 use App\Models\AuditLog;
+use App\Models\Notification;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class RetailerController extends Controller
 {
@@ -101,6 +103,18 @@ class RetailerController extends Controller
             target: "{$retailer->shop} ({$retailer->id})",
             ip: $request->ip()
         );
+
+        // Welcome notification for retailer
+        Notification::create([
+            'id' => 'NTF_WELCOME_' . $newId,
+            'audience' => $newId,
+            'type' => 'success',
+            'title' => 'Welcome to VerifyHub!',
+            'text' => "Your merchant account ({$retailer->shop}) is active. Ready to run Aadhaar, PAN, Bank and e-Sign checks.",
+            'read' => false,
+            'link' => '/retailer/overview',
+            'created_at' => Carbon::now(),
+        ]);
 
         return $this->successResponse([
             'id' => $retailer->id,

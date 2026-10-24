@@ -7,9 +7,11 @@ use App\Models\KycService;
 use App\Models\Retailer;
 use App\Models\RetailerPricing;
 use App\Models\AuditLog;
+use App\Models\Notification;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PricingController extends Controller
 {
@@ -184,6 +186,18 @@ class PricingController extends Controller
             "Custom rate card updated for {$retailer->shop} ({$retailerId})",
             $request->ip()
         );
+
+        // Notify retailer of custom rate card update
+        Notification::create([
+            'id' => 'NTF_PRICE_' . $retailerId . '_' . time(),
+            'audience' => $retailerId,
+            'title' => 'Custom rates updated',
+            'text' => 'Super Admin updated your verification pricing rates.',
+            'type' => 'info',
+            'link' => '/retailer/profile',
+            'read' => false,
+            'created_at' => Carbon::now(),
+        ]);
 
         return $this->success(null, "Custom rate card saved for {$retailer->shop}.");
     }
